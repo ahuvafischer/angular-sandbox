@@ -10,8 +10,9 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 <script src="app/app.js"></script>
-<script src="app/controllers.js"></script>
-<script src="app/services.js"></script>
+<script src="app/controllers/results.controller.js"></script>
+<script src="app/services/parse-csv.service.js"></script>
+<script src="app/services/read-file.service.js"></script>
 
 <link rel="stylesheet" type="text/css" href="app/assets/css/styles.css">
 </head>
@@ -20,7 +21,7 @@
 	<h5>Loto Results</h5>
 	<div id="chart_div"></div>
     <div id="pie_div"></div>
-	<div ng-controller="lotoResults as results" id="divForm">
+	<div ng-controller="ResultsController as results" id="divForm">
          <form name="filterByYear">
 			<label for="selectYear"> Filter results by year: </label>
 			<select name="selectYear" id="selectYear" ng-model="data.selectYear">

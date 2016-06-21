@@ -1,23 +1,5 @@
-lotoApp.factory('readFile', ['$http', '$q', function($http, $q) {/*global lotoApp*/
-  var deferred = $q.defer();
+lotoApp.factory('parseCsvService', [function() {
 
-  function getData(){
-      return  $http.get('../data/loto.csv'). //Return here
-        then(function(response) { 
-            return response.data;
-        }, function(response) {
-          console.log(response);
-        });
-    }
-  
-    return {
-    getData: function () {
-      return getData(); 
-    }
-};
-}]);
-lotoApp.factory('parseCsv', function() {
-    
     //calculate sum of each number
     function getSumNumbers(csv){
       var lines=readLines (csv);//return an array of strings
@@ -236,4 +218,4 @@ lotoApp.factory('parseCsv', function() {
           return getSumNumbersPerYear(csv);
         }
     };
-})  
+}]);  

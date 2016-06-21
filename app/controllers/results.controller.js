@@ -1,4 +1,4 @@
-lotoApp.controller('lotoResults', ['$scope', '$filter', '$interval', 'readFile', 'parseCsv', function($scope ,$filter, $interval, readFile, parseCsv) {/*global lotoApp*/
+lotoApp.controller('ResultsController', ['$scope', '$filter', '$interval', 'readFileService', 'parseCsvService', function($scope ,$filter, $interval, readFileService, parseCsvService) {/*global lotoApp*/
     /*initializations*/
 
     $scope.selectYear = [];
@@ -12,7 +12,7 @@ lotoApp.controller('lotoResults', ['$scope', '$filter', '$interval', 'readFile',
     
     //initialize data
     $scope.getFile = function(){
-      readFile.getData().then(function(data) {
+      readFileService.getData().then(function(data) {
        $scope.lotoData = data;
      });
     };
@@ -22,8 +22,8 @@ lotoApp.controller('lotoResults', ['$scope', '$filter', '$interval', 'readFile',
     //watch for data to be fetched or changed, then update graphs
     $scope.$watch('lotoData', function(newValue, oldValue) {
       if(!newValue) return;
-      $scope.data.yearList = parseCsv.getYearList($scope.lotoData);
-      $scope.data.numList = parseCsv.getNumList($scope.lotoData);
+      $scope.data.yearList = parseCsvService.getYearList($scope.lotoData);
+      $scope.data.numList = parseCsvService.getNumList($scope.lotoData);
       var pieData = updatePie();
       var barData = updateBar();
       //call function to display graphs
@@ -60,20 +60,20 @@ lotoApp.controller('lotoResults', ['$scope', '$filter', '$interval', 'readFile',
       if ($scope.data.selectYear){
         pieData = updatePieByYear();
       } else {
-        pieData = parseCsv.getSumNumbers($scope.lotoData);
+        pieData = parseCsvService.getSumNumbers($scope.lotoData);
       }
       return pieData;
     }
     
     function updateBar(){
       var barData = [];
-      barData = parseCsv.getSumNumbersPerYear($scope.lotoData);
+      barData = parseCsvService.getSumNumbersPerYear($scope.lotoData);
       return barData;
     }
     
     function updatePieByYear (){
       var year = $scope.data.selectYear;
-      var pieData = parseCsv.getSumNumbersByYear($scope.lotoData, year);
+      var pieData = parseCsvService.getSumNumbersByYear($scope.lotoData, year);
       return pieData;
     }
     
