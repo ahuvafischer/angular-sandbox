@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="lotoApp">
+
+<head>
+<meta charset="utf-8">
+<title>Loto</title>
+<style type="text/css"></style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script src="app/app.js"></script>
+<script src="app/controllers.js"></script>
+<script src="app/services.js"></script>
+
+<link rel="stylesheet" type="text/css" href="app/assets/css/styles.css">
+</head>
+
+<body>
+	<h5>Loto Results</h5>
+	<div id="chart_div"></div>
+    <div id="pie_div"></div>
+	<div ng-controller="lotoResults as results" id="divForm">
+         <form name="filterByYear">
+			<label for="selectYear"> Filter results by year: </label>
+			<select name="selectYear" id="selectYear" ng-model="data.selectYear">
+				<option ng-repeat="year in data.yearList" value="{{year}}">{{year}}</option>
+			</select>
+			<label for="selectNum"> Filter results by number: </label>
+			<select name="selectNum" id="selectNum" ng-model="data.selectNum">
+				<option ng-repeat="num in data.numList" value="{{num}}">{{num}}</option>
+			</select>
+		  </form>
+		  <button ng-click="getFile()">
+		  Refresh
+		</button>
+    </div>
+</body>
+</html>
