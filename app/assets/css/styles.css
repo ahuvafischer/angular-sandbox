@@ -1,0 +1,15 @@
+body{
+    border:solid 2pt black;
+    font-family: arial;
+}
+h5{
+    text-align: center;
+    font: bold;
+}
+#divForm{
+    width: 100%;
+    text-align: center;
+    font-size: 10pt;
+    background-color: #f6f6f6;
+    padding: 3pt 0 3pt 0;
+}  
