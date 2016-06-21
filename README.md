@@ -1,26 +1,10 @@
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Ahuva Fisher, 21/june/16
 
+This is a sandbox repository for me to implement what i learn about angular. 
 
-Hi there! Welcome to Cloud9 IDE!
+I started out building a sample app, which reads loto results from a csv, and displays them in graph and pie formats.
+it checks for updates in the file, and the results can be filtered (thanks to T.R for the idea for this sample app).
 
-To get you started, we included a small hello world application.
+This application is curently aligniing the existing code with the new angular 1 styleguide (see https://github.com/toddmotto/angular-styleguide), which is aligned with angular 2.
 
-1) Open the hello-world.html file
-
-2) Click on the Preview button to open a live preview pane
-
-3) Make some changes to the file, save, watch the preview, and have fun!
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for documentation, or http://support.c9.io for support.
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+My plan is to from there upgrade to Angular 2.
